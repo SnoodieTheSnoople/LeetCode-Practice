@@ -8,7 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        PascalsTriangleSol();
+        Stock();
     }
 
     static void DupeSol()
