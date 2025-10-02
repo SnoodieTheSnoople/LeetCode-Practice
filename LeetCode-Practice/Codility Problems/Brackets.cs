@@ -2,30 +2,35 @@
 
 public class Brackets
 {
-    public int Solution(string s)
+    public int Solution(string S)
     {
+        if (S.Length == 0) return 1; 
+        if (S.Length % 2 == 1) return 0;
+
         var dict = new Dictionary<char, char>
         {
             { '}', '{' },
             { ']', '[' },
             { ')', '(' }
         };
-        
+
         var stack = new Stack<char>();
 
 
-        foreach (var c in s)
+        foreach (var c in S)
         {
-            if (!dict.ContainsKey(c))
-                stack.Push(c);
-            if (dict.ContainsKey(c))
+            if (c == '(' || c == '[' || c == '{')
             {
-                if (stack.Peek() != dict[c] || stack.Count == 0)
+                stack.Push(c);
+            }
+            else if (dict.ContainsKey(c))
+            {
+                if (stack.Count == 0 || stack.Peek() != dict[c])
                     return 0;
                 stack.Pop();
             }
         }
-        
-        return 1;
+
+        return stack.Count == 0 ? 1 : 0;
     }
 }
