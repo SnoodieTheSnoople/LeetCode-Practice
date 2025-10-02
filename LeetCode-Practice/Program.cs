@@ -1,4 +1,5 @@
 ﻿using LeetCode_Practice.Array;
+using LeetCode_Practice.Codility_Problems;
 using LeetCode_Practice.HSBC;
 using LeetCode_Practice.Meta;
 
@@ -8,7 +9,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Stock();
+        BracketsSol();
     }
 
     static void DupeSol()
@@ -114,5 +115,11 @@ class Program
         {
             Console.WriteLine(String.Join(", ", item));
         }
+    }
+
+    static void BracketsSol()
+    {
+        var b = new Brackets();
+        Console.WriteLine(b.Solution("{[()()]}"));
     }
 }
