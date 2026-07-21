@@ -2,7 +2,7 @@ namespace LeetCode_Practice;
 
 public class QueueFromTwoStacks
 {
-    public static List<int> processRequestQueueOperations(List<string> operations, List<int> values)
+    public static List<int> ProcessRequestQueueOperations(List<string> operations, List<int> values)
     {
         var inStack = new Stack<int>();
         var outStack = new Stack<int>();
